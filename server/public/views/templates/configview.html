@@ -2,12 +2,13 @@
   <h1>Settings</h1>
 
   <h2>Add color</h2>
-  <div>
+<div>
   <select ng-model=settings.addColor ng-options="x for x in settings.allColors"></select>
-  <button ng-model=settings.addColor ng-click="settings.addColors()">Add</button> 
-  <div class="color-button" ng-style="{background: settings.addColor}">
-
-  </div>
+  <button ng-model=settings.addColor ng-click="settings.addColors()">Add</button>
+  <div class="color-button" ng-style="{background: settings.addColor}"></div>
+</div>
+<div>
+  <button ng-model=settings.addColor ng-click="settings.removeColor()">Remove Last Color</button>
   </div>
 
 </div>

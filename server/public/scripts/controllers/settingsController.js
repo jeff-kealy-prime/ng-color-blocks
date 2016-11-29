@@ -6,20 +6,28 @@ colorBlocks.controller('SettingsController', ['$scope', 'DataFactory', '$http', 
   self.addColor = {};
   console.log(DataFactory);
   self.addColors = function(){
-    $http.post('/colorsroute', self)
-      .then(function(response) {
-        console.log("added color", self.addColor);
 
-        DataFactory.getColors;
-      },
-      function(response) {
-        // error
-        console.log('ERROR post response: ', response.data);
-      });
-    // DataFactory.colors.push(self.addColor)
-    // alert("Added");
-    // self.addColor = {};
+    DataFactory.colors.push(self.addColor)
+    alert("Added");
+    self.addColor = {};
+  }
+  self.removeColor = function(){
+    DataFactory.colors.pop()
   }
 
 
 }]);
+
+
+
+
+// $http.post('/colorsroute', self)
+//   .then(function(response) {
+//     console.log("added color", self.addColor);
+//
+//     DataFactory.getColors();
+//   },
+//   function(response) {
+//     // error
+//     console.log('ERROR post response: ', response.data);
+//   });

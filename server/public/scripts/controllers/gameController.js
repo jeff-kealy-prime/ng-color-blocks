@@ -4,7 +4,7 @@ console.log('game controller running');
 console.log('data factory', DataFactory);
 var self = this;
 self.colors = DataFactory.colors;
-
+self.streak = DataFactory.streak
 // start game
 init();
 
@@ -20,10 +20,11 @@ function init() {
 self.handleInput = function(clickedColor) {
   if(clickedColor === self.currentColor) {
     alert('You got it!\n\nNow try another!');
-
+    self.streak++
     init();
   } else {
     self.messageText = 'Oh no! You guessed wrong!';
+    self.streak = 0;
   }
 }
 

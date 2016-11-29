@@ -14,6 +14,9 @@ function init() {
   self.messageText = "";
   self.currentColor = self.colors[randomNumber(0, self.colors.length - 1)];
   self.colorPrompt = 'Can you find the ' + self.currentColor + ' block?'
+  if (self.currentColor == undefined) {
+    self.colorPrompt = "There are no colors. Refresh the page for some fun!"
+  }
 }
 
 // click handler for guessing colors

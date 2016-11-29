@@ -8,15 +8,7 @@ colorBlocks.factory('DataFactory', ['$http',function($http) {
     colors: colors,
     allColors: allColors,
     streak: streak
-    // getColors: function() {
-    //   getColorsFromDB();
-    // }
   };
-
-  console.log("colorsObj.colors", colorsObj.colors);
-  colorsObj.getColors
-
-
   return colorsObj;
 }]);
 

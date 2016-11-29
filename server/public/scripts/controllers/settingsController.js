@@ -4,7 +4,6 @@ colorBlocks.controller('SettingsController', ['$scope', 'DataFactory', '$http', 
   self.colors = DataFactory.colors;
   self.allColors = DataFactory.allColors;
   self.addColor = {};
-  console.log(DataFactory);
   self.addColors = function(){
 
     DataFactory.colors.push(self.addColor)

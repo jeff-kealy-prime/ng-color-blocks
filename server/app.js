@@ -1,6 +1,13 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+var bodyParser = require('body-parser');
+var colorsRoute = require('./routes/colorsroute')
+
+app.use(bodyParser.json());
+
+//Routing
+app.use('/colorsroute', colorsRoute);
 
 // Serve back static files
 app.use(express.static(path.join(__dirname, './public')));

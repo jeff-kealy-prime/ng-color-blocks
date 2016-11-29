@@ -1,12 +1,13 @@
-colorBlocks.controller('GameController', ['$scope', function($scope) {
+colorBlocks.controller('GameController', ['$scope', 'DataFactory', function($scope, DataFactory) {
 
 console.log('game controller running');
-
+console.log('data factory', DataFactory);
 var self = this;
-self.colors = ['red', 'blue', 'magenta', 'green', 'pink'];
+self.colors = DataFactory.colors;
 
 // start game
 init();
+
 
 // resets game to the starting state
 function init() {
@@ -19,6 +20,7 @@ function init() {
 self.handleInput = function(clickedColor) {
   if(clickedColor === self.currentColor) {
     alert('You got it!\n\nNow try another!');
+
     init();
   } else {
     self.messageText = 'Oh no! You guessed wrong!';
